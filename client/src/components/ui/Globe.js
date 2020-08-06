@@ -1,9 +1,12 @@
 import React from 'react'
+import video from '../../img/Amsterdam.mp4'
 
 const Globe = () => {
     return (
         <div>
-            <iframe src="https://giphy.com/embed/YkXNjAkG7CfEVx3gcy" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/world-earth-YkXNjAkG7CfEVx3gcy">via GIPHY</a></p>
+            <video width="100%" height="100%">
+                <source src={video} type="video/mp4"></source>
+            </video>
         </div>
     )
 }
