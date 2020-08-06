@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import Ecuador from '../../img/Ecuador.png'
+import Cart from './Cart'
 
 const Guix = () => {
+
+    const [isClicked, setIsClicked] = useState(false)
+
+    const onClick = () => {
+        setIsClicked(true)
+    }
+
+    const cart = <Cart />
+
     return (
         <div>
-            Interactive GUIX page with hotspots goes here.
+            { isClicked ? cart : <img 
+                height='100%' 
+                width='100%' 
+                src={Ecuador} 
+                alt=''
+                onClick={onClick} 
+            />
+            }
         </div>
     )
 }
