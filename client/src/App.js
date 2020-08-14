@@ -4,6 +4,7 @@ import Search from './components/ui/Search'
 import Globe from './components/ui/Globe'
 import Zoom from './components/ui/Zoom'
 import Guix from './components/ui/Guix'
+import './App.css'
 
 const App = () => {
 

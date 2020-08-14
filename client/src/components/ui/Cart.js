@@ -4,6 +4,12 @@ import axios from 'axios'
 
 const Cart = () => {
 
+    const onDeleteClick = (id) => {
+        console.log(id)
+        axios
+            .delete(`api/items/delete/${id}`)
+    }
+
     const [items, setItems] = useState([])
 
     useEffect(() => {
@@ -25,7 +31,11 @@ const Cart = () => {
             {items.map(({ _id, name }) => (
                 <div key={_id}>
                     <ul>
-                        <li>
+                        <li> 
+                            <button
+                            style={{color: 'red'}}
+                            onClick={() => onDeleteClick(_id)}
+                            >Remove</button>
                             {name}
                         </li>
                     </ul>
