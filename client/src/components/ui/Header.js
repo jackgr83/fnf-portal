@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <header className='center'>
+        <header style={{ fontSize: "40px", fontFamily: "cursive" }} className='center'>
             Fair World Community
         </header>
     )
