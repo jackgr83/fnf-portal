@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import Header from './components/ui/Header'
-// import Search from './components/ui/Search'
-// import Globe from './components/ui/Globe'
-// import Zoom from './components/ui/Zoom'
-import Guix from './components/ui/Guix'
-import Cart from './components/ui/Cart'
+import Guix from './pages/Guix'
+import Cart from './pages/Cart'
 import Home from './pages/Home'
 import NotFoundPage from './NotFoundPage'
-import {useRoutes} from 'hookrouter'
+import { useRoutes } from 'hookrouter'
 import './App.css'
 
 const routes = {
