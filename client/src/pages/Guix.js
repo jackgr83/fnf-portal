@@ -16,35 +16,38 @@ const Guix = () => {
         chTextPopup(false)
     }
 
-    const cart = <Cart />
     const baseStyle = {opacity: "80%", position: "absolute", left: "37%", top: "50%"}
     const hoverStyle = {fontSize: "30px", opacity: "80%", position: "absolute", left: "37%", top: "50%"}
-    const clickStyle = {visibility: "hidden"}
 
     const content = (
-        <p style={{ padding: 0, margin: 0 }}>
-          Here is some content
+        <p style={{ color: "black", padding: 0, margin: 0 }}>
+          Items:
           <br />
           <br />
-          More content
+          <div>
+            <label>
+                <input type="checkbox" checked="false" />Wine
+            </label>
+          </div>
           <br />
           <br />
-          More content
+          <div>
+            <label>
+                <input type="checkbox" checked="false" />Cheese
+            </label>
+          </div>
           <br />
           <br />
-          More content
+          <div>
+            <label>
+                <input type="checkbox" checked="false" />Bread
+            </label>
+          </div>
           <br />
           <br />
-          More content
-          <br />
-          <br />
-          More content
-          <br />
-          <br />
-          More content
-          <br />
-          <br />
-          This how we began
+            <button onClick={() => navigate('/ShoppingCart', false)}>
+                Add to Cart
+            </button>
         </p>
       );
       const heading = "Ordering Menu";

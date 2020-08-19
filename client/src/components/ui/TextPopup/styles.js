@@ -41,7 +41,8 @@ export default makeStyles(theme => ({
     padding: 0,
     margin: 0,
     fontSize: "1.5rem",
-    fontWeight: "500"
+    fontWeight: "500",
+    color: "black"
   },
   textPopupContent: {
     maxHeight: "400px",
