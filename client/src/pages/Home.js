@@ -17,9 +17,9 @@ const Home = () => {
     return (
         <div className="Container">
             <Header />
-            { videoEnded && location.length > 0 ? navigate('/GifPage', false) : location.length > 0 ? zoom : globe }
+            <Search />
             <br></br>
-            { location.length == 0 ? <Search getLocation={(q) => setLocation(q)} /> : ''}
+            { videoEnded && location.length > 0 ? navigate('/GifPage', false) : location.length > 0 ? zoom : globe }
         </div>
         
     )
