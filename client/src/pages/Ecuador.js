@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { navigate } from 'hookrouter'
-import Ecuador from '../img/Ecuador.png'
+import EcuadorImg from '../img/Ecuador.png'
 import TextPopup from '../components/ui/TextPopup/TextPopup'
 import Cart from './Cart'
 
-const Guix = () => {
+const Ecuador = () => {
 
     const [hovered, setHovered] = useState(false)
     const [textPopup, chTextPopup] = useState(false)
@@ -40,7 +40,7 @@ const Guix = () => {
           <br />
           <div>
             <label>
-                <input type="checkbox" checked="false" />Bread
+                <input type="checkbox" checked="false" />Eggs
             </label>
           </div>
           <br />
@@ -68,11 +68,11 @@ const Guix = () => {
             <img 
                 height='100%' 
                 width='100%' 
-                src={Ecuador} 
+                src={EcuadorImg} 
                 alt='' 
             />
         </div>
     )
 }
 
-export default Guix
+export default Ecuador

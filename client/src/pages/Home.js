@@ -9,17 +9,17 @@ const Home = () => {
 
     const [videoEnded, setVideoEnded] = useState(false)
     const [location, setLocation] = useState('')
+    const [goClick, goClicked] = useState(false)
 
     const zoom = <Zoom videoEnd={(q) => setVideoEnded(q)} />
     const globe = <Globe />
-
     
     return (
         <div className="Container">
             <Header />
-            <Search />
+            <Search goClicked={(bool) => goClicked(bool)} setLocation={(q) => setLocation(q)} />
             <br></br>
-            { videoEnded && location.length > 0 ? navigate('/GifPage', false) : location.length > 0 ? zoom : globe }
+            { videoEnded && goClick ? navigate(`/${location}`, false) : goClick ? zoom : globe }
         </div>
         
     )

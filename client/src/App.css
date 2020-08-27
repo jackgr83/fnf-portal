@@ -64,6 +64,7 @@ header img {
   height: 100px;
   color: black;
   background-color: black;
+  width: 25%;
 }
 
 input[type='text'] {

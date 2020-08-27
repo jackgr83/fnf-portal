@@ -1,54 +1,47 @@
 import React, { useState } from 'react'
+import Select from 'react-select'
+import Button from 'react-bootstrap/Button'
 
-const Search = ({ getLocation }) => {
-    const [text, setText] = useState('')
-    const onChange = (q) => {
-        setText(q)
+const Search = ({ goClicked, setLocation }) => {
+
+    const [place, setPlace] = useState('')
+    const [food, setFood] = useState('')
+
+    const handleClick = () => {
+        goClicked(true)
+        setLocation(`${place}`)
     }
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-        console.log(`${text}`)
-        getLocation(`${text}`)
-    }
+
+    const fOptions = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'wine', label: 'Wine' },
+        { value: 'cheese', label: 'Cheese' }
+    ]
+
+    const pOptions = [
+        { value: 'Amsterdam', label: 'Amsterdam' },
+        { value: 'Australia', label: 'Australia' },
+        { value: 'Brazil', label: 'Brazil' },
+        { value: 'Canada', label: 'Canada' },
+        { value: 'Denmark', label: 'Denmark' },
+        { value: 'Ecuador', label: 'Ecuador' },
+        { value: 'Finland', label: 'Finland' },
+        { value: 'Italy', label: 'Italy' },
+        { value: 'Norway', label: 'Norway' },
+        { value: 'Spain', label: 'Spain' }
+    ]
 
     return (
+        <div className='center'>
         <section className='search'>
-            <form onSubmit={handleSubmit}>
-                <select 
-                    type='text' 
-                    className='form-control' 
-                    placeholder='Choose A Place'
-                    value={text}
-                    onChange={(e) => onChange(e.target.value)}
-                >
-                    <option value="Amsterdam">Amsterdam</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Panama">Panama</option>
-                </select>
-                <select 
-                    type='text' 
-                    className='form-control' 
-                    placeholder='Choose A Product'
-                    value={text}
-                    onChange={(e) => onChange(e.target.value)}
-                >
-                    <option value="Bread">Bread</option>
-                    <option value="Cheese">Cheese</option>
-                    <option value="Chocolate">Chocolate</option>
-                    <option value="Eggs">Eggs</option>
-                    <option value="Wine">Wine</option>
-                </select>
-
-                <input 
-                    type='submit' 
-                    // style={{display:'none'}} 
-                    value='Submit'
-                />
-            </form>
+            <span style={{color: 'white'}}>Select a place: </span>
+            <Select onChange={(evt) => setPlace(evt.value)} options={pOptions} />
+            <Button 
+                onClick={() => handleClick()}>Go
+            </Button>
             
         </section>
+        </div>
     )
 }
 

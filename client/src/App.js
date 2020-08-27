@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Guix from './pages/Guix'
+import Amsterdam from './pages/Amsterdam'
+import Brazil from './pages/Brazil'
+import Ecuador from './pages/Ecuador'
 import Cart from './pages/Cart'
 import Home from './pages/Home'
 import NotFoundPage from './NotFoundPage'
@@ -8,7 +10,9 @@ import './App.css'
 
 const routes = {
   '/': () => <Home />,
-  '/GifPage': () => <Guix />,
+  '/Amsterdam': () => <Amsterdam />,
+  '/Brazil': () => <Brazil />,
+  '/Ecuador': () => <Ecuador />,
   '/ShoppingCart': () => <Cart />
 }
 
@@ -22,7 +26,7 @@ const App = () => {
 
   // const zoom = <Zoom videoEnd={(q) => setVideoEnded(q)} />
   // const globe = <Globe />
-  // const page = <Guix />
+  // const page = <Ecuador />
 
   // return (
   //   <div className="Container">
