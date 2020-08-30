@@ -138,6 +138,46 @@ input[type='text'] {
   padding-bottom: 10px;
 }
 
+.dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50.5%;
+  right: 50%;
+  top: 68.2%;
+  color: white;
+  text-shadow: 0 0 10px white;
+  font-size: 55px;
+}
+
+.dotHov {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50.5%;
+  right: 50%;
+  top: 68.2%;
+  color: white;
+  font-size: 55px;
+  cursor: pointer;
+  text-shadow: 0 0 20px white;
+}
+
+.tooltip {
+  height:100px;
+  width:190px;
+  color:#fff;
+  background-color:rgba(0,0,0,.5);
+  position:absolute;
+  margin-top: 200px;
+  font-weight:600;
+  text-align:center;
+  padding: 10px 10px;
+  border-radius:25px
+}
+
 @media (max-width: 800px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);

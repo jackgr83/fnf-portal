@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Select from 'react-select'
 import Button from 'react-bootstrap/Button'
 
-const Search = ({ goClicked, setLocation }) => {
+const Search = ({ goClicked, setLocation, setMicrositeUrl }) => {
 
     const [place, setPlace] = useState('')
     const [food, setFood] = useState('')
@@ -10,6 +10,7 @@ const Search = ({ goClicked, setLocation }) => {
     const handleClick = () => {
         goClicked(true)
         setLocation(`${place}`)
+        setMicrositeUrl('http://' + `${place}` + '.world')
     }
 
     const fOptions = [
@@ -39,7 +40,6 @@ const Search = ({ goClicked, setLocation }) => {
             <Button 
                 onClick={() => handleClick()}>Go
             </Button>
-            
         </section>
         </div>
     )

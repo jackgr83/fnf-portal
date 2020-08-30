@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Amsterdam from './pages/Amsterdam'
 import Brazil from './pages/Brazil'
 import Ecuador from './pages/Ecuador'
+import CrunchyCakes from './pages/CrunchyCakes'
 import Cart from './pages/Cart'
 import Home from './pages/Home'
 import NotFoundPage from './NotFoundPage'
@@ -13,6 +14,7 @@ const routes = {
   '/Amsterdam': () => <Amsterdam />,
   '/Brazil': () => <Brazil />,
   '/Ecuador': () => <Ecuador />,
+  '/CrunchyCakes': () => <CrunchyCakes />,
   '/ShoppingCart': () => <Cart />
 }
 
