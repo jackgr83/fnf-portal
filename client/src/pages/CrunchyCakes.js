@@ -3,22 +3,23 @@ import cc from '../img/CrunchyCakes.gif'
 import Tooltip from '@material-ui/core/Tooltip'
 import vid from '../img/Ecuador.mp4'
 import Dialog from "@material-ui/core/Dialog"
+import Dotspot from '../components/ui/Dotspot'
 
 const CrunchyCakes = () => {
 
-    const [hover, setHover] = useState(false)
+    // const [hover, setHover] = useState(false)
     const [video, setVideo] = useState(false)
 
-    const tooltip = <div className="tooltip">
-                        <a 
-                            style={{color: 'white', textDecoration: 'underline'}} 
-                            href='http://dropbox.com' target="_blank">
-                            Here is some content
-                        </a>
-                        <br></br>
-                        <br></br>
-                        <button onClick={() => setVideo(true)}>video</button>
-                    </div>
+    // const tooltip = <div className="tooltip">
+    //                     <a 
+    //                         style={{color: 'white', textDecoration: 'underline'}} 
+    //                         href='http://dropbox.com' target="_blank">
+    //                         Here is some content
+    //                     </a>
+    //                     <br></br>
+    //                     <br></br>
+    //                     <button onClick={() => setVideo(true)}>video</button>
+    //                 </div>
     
     // function closeVideoModal(e) {
     //     e.preventDefault();
@@ -31,7 +32,7 @@ const CrunchyCakes = () => {
 
     return (
         <div className='center'>
-            <Tooltip title={tooltip} interactive>
+            {/* <Tooltip title={tooltip} interactive>
                 <div
                     className={ hover ? 'dotHov' : 'dot' }
                     onMouseEnter={() => setHover(true)}
@@ -39,7 +40,9 @@ const CrunchyCakes = () => {
                 >
                     &#9679;
                 </div>
-            </Tooltip>
+            </Tooltip> */}
+
+            <Dotspot />
 
             <img 
                 height='50%' 

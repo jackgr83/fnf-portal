@@ -14,6 +14,11 @@ const Home = () => {
 
     const zoom = <Zoom videoEnd={(q) => setVideoEnded(q)} location={location} />
     const globe = <Globe />
+
+    useEffect(() => { 
+        document.body.style.backgroundColor = '#000'
+        return () => {document.body.style.backgroundColor = 'white'} 
+    })
     
     return (
         <div className="Container">
