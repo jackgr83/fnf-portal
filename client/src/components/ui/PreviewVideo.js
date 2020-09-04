@@ -9,6 +9,8 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close'
 import FeedbackForm from './FeedbackForm'
+import Dotspot from './Dotspot'
+import { A } from 'hookrouter'
 
 const PreviewVideo = () => {
 
@@ -47,6 +49,9 @@ const PreviewVideo = () => {
                     <video id="video" width="400" controls autoPlay onPause={() => openForm()} onEnded={() => closeDialogs()}>
                         <source src={vid} type="video/mp4"></source>
                     </video>
+                    <A href='/Brazil'>
+                    <Dotspot position={{left: '50.5%', right: '50%', top: '68.2%'}} />
+                    </A>
                 </DialogContent>
             </Dialog> 
             <FeedbackForm form={form} setForm={(bool) => setForm(bool)} />
