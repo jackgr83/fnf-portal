@@ -49,9 +49,7 @@ const PreviewVideo = () => {
                     <video id="video" width="400" controls autoPlay onPause={() => openForm()} onEnded={() => closeDialogs()}>
                         <source src={vid} type="video/mp4"></source>
                     </video>
-                    <A href='/Brazil'>
-                    <Dotspot position={{left: '50.5%', right: '50%', top: '68.2%'}} />
-                    </A>
+                    <Dotspot position={{left: '80%', top: '60%'}} a={<A style={{color: 'white'}} href='/Otavalo'>&#9679;</A>} />    
                 </DialogContent>
             </Dialog> 
             <FeedbackForm form={form} setForm={(bool) => setForm(bool)} />

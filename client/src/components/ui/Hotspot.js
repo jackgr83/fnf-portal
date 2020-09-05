@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Tooltip from '@material-ui/core/Tooltip'
 import earth from '../../img/earth.png'
+import { A } from 'hookrouter'
 
-const Dotspot = ({ position, a }) => {
+const Hotspot = ({ icon, position }) => {
 
     const [hover, setHover] = useState(false)
     const [video, setVideo] = useState(false)
@@ -24,15 +25,14 @@ const Dotspot = ({ position, a }) => {
     return (
             <Tooltip title={tooltip} interactive>
                 <div
-                    className={ hover ? 'dotHov' : 'dot'}
                     style={ position }
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                 >
-                    { a ? a : <div>&#9679;</div> } 
+                    {icon}
                 </div>
             </Tooltip>
     )
 }
 
-export default Dotspot
+export default Hotspot

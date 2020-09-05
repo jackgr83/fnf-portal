@@ -172,9 +172,6 @@ input[type='text'] {
   align-items: center;
   justify-content: center;
   position: absolute;
-  /* left: 50.5%;
-  right: 50%;
-  top: 68.2%; */
   color: white;
   text-shadow: 0 0 10px white;
   font-size: 55px;
@@ -185,9 +182,6 @@ input[type='text'] {
   align-items: center;
   justify-content: center;
   position: absolute;
-  /* left: 50.5%;
-  right: 50%;
-  top: 68.2%; */
   color: white;
   font-size: 55px;
   cursor: pointer;
