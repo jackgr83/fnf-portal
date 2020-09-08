@@ -5,7 +5,7 @@ import Globe from '../components/ui/Globe'
 import Zoom from '../components/ui/Zoom'
 import Search from '../components/ui/Search'
 
-const Home = () => {
+const Section3 = () => {
 
     const [videoEnded, setVideoEnded] = useState(false)
     const [location, setLocation] = useState('')
@@ -33,4 +33,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Section3

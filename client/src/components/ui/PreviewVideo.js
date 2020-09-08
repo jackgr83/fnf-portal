@@ -12,7 +12,7 @@ import FeedbackForm from './FeedbackForm'
 import Dotspot from './Dotspot'
 import { A } from 'hookrouter'
 
-const PreviewVideo = () => {
+const PreviewVideo = ({ title, fForm, dotspot, ended }) => {
 
     const [video, setVideo] = useState(true)
     const [form, setForm] = useState(false)
@@ -25,6 +25,7 @@ const PreviewVideo = () => {
     const closeDialogs = () => {
         setVideo(false)
         setForm(false)
+        if(ended){ended(true)}
     }
 
     const openForm = () => {
@@ -40,8 +41,8 @@ const PreviewVideo = () => {
                 open={video}
             >
                 <DialogTitle>
-                    Preview Video
-                    <IconButton aria-label="close" style={{ marginLeft: '230px' }} onClick={closeDialogs}>
+                    { title ? title : "Preview Video" }
+                    <IconButton aria-label="close" style={{ position: 'absolute', right: '3%', top: '2%' }} onClick={closeDialogs}>
                         <CloseIcon />
                     </IconButton>
                 </DialogTitle>
@@ -49,10 +50,11 @@ const PreviewVideo = () => {
                     <video id="video" width="400" controls autoPlay onPause={() => openForm()} onEnded={() => closeDialogs()}>
                         <source src={vid} type="video/mp4"></source>
                     </video>
-                    <Dotspot position={{left: '80%', top: '60%'}} a={<A style={{color: 'white'}} href='/Otavalo'>&#9679;</A>} />    
+                    { dotspot ? dotspot : '' }
+                    {/* <Dotspot position={{left: '80%', top: '60%'}} a={<A style={{color: 'white'}} href='/Otavalo'>&#9679;</A>} />     */}
                 </DialogContent>
             </Dialog> 
-            <FeedbackForm form={form} setForm={(bool) => setForm(bool)} />
+            { fForm ? <FeedbackForm form={form} setForm={(bool) => setForm(bool)} /> : '' }
         </div>
     )
 }
