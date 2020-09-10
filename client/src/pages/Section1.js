@@ -13,10 +13,10 @@ const Section1 = () => {
     return (
         <div>
             <div className='flexContainer'>
-                <div className='flexItem'><Hotspot icon={<img src={rm} />} tip={ <div>Our 90 Day Roadmap</div> } ></Hotspot></div>
-                <div className='flexItem'><Hotspot icon={<img src={ge} />} tip={ <div>Guix Explanation</div> }></Hotspot></div>
-                <div className='flexItem'><Hotspot icon={<img src={hf} />} tip={ <div>History and Founders</div> }></Hotspot></div>
-                <div className='flexItem'><Hotspot icon={<img src={pp} />} tip={ <div>Our Proposition</div> }></Hotspot></div>
+                <div className='flexItem'><Hotspot icon={<img className="shadow" src={rm} />} tip={ <div>Our 90 Day Roadmap</div> } ></Hotspot></div>
+                <div className='flexItem'><Hotspot icon={<img className="shadow" src={ge} />} tip={ <div>Guix Explanation</div> }></Hotspot></div>
+                <div className='flexItem'><Hotspot icon={<img className="shadow" src={hf} />} tip={ <div>History and Founders</div> }></Hotspot></div>
+                <div className='flexItem'><Hotspot icon={<img className="shadow" src={pp} />} tip={ <div>Our Proposition</div> }></Hotspot></div>
             </div>
             <div style={{ position: 'absolute', left: '50%', right: '50%', top: '50%', textAlign: 'center', margin: '-50px 0px 0px -75px' }}>
                 <img src={ecomama} />
