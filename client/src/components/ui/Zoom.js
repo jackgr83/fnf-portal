@@ -12,8 +12,8 @@ const Zoom = ({ videoEnd, location }) => {
         <div className="center">
             <video width="50%" height="50%" autoPlay onEnded={() => myCallback()}>
                 { location == 'Amsterdam' ? Amsterdam : 
-                  location == 'Ecuador' ? Ecuador : 
-                  ''                
+                  location == 'Otavalo' ? Ecuador : 
+                  Amsterdam                
                 }
             </video>
         </div>

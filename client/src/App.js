@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import Opening from './pages/Opening'
 import Section1 from './pages/Section1'
 import Section2 from './pages/Section2'
@@ -10,14 +10,20 @@ import Section7 from './pages/Section7'
 import NotFoundPage from './NotFoundPage'
 import { useRoutes } from 'hookrouter'
 import './App.css'
-import SantaMonica from './pages/SantaMonica';
-import Babel from './pages/Babel';
+import SantaMonica from './pages/SantaMonica'
+import Babel from './pages/Babel'
+import Ecuador from './pages/Ecuador'
+import CrunchyCakes from './pages/CrunchyCakes'
+import Otavalo from './pages/Otavalo'
 
 const routes = {
   '/': () => <Opening />,
   '/Section1': () => <Section1 />,
   '/SantaMonica': () => <SantaMonica />,
   '/Babel': () => <Babel />,
+  '/Ecuador': () => <Ecuador />,
+  '/CrunchyCakes': () => <CrunchyCakes />,
+  '/Otavalo': () => <Otavalo />,
   '/Section2': () => <Section2 />,
   '/Section3': () => <Section3 />,
   '/Section4': () => <Section4 />,

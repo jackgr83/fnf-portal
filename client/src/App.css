@@ -188,6 +188,27 @@ input[type='text'] {
   text-shadow: 0 0 20px white;
 }
 
+.bDot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: #000;
+  text-shadow: 0 0 10px #000;
+  font-size: 55px;
+}
+
+.bDotHov {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: #000;
+  font-size: 55px;
+  cursor: pointer;
+  text-shadow: 0 0 20px #000;
+}
+
 .tooltip {
   height:90px;
   width:170px;
@@ -201,6 +222,21 @@ input[type='text'] {
   text-align:center;
   padding: 10px 10px;
   border-radius:25px
+}
+
+.tooltipOneLine {
+  height:20px;
+  width:170px;
+  color:#fff;
+  background-color:rgba(0,0,0,.5);
+  position:absolute;
+  margin-top: -15px;
+  margin-left: -55px;
+  font-weight:600;
+  font-size: 14px;
+  text-align:center;
+  padding: 2px;
+  border-radius: 5px;
 }
 
 .MuiTooltip-tooltip {

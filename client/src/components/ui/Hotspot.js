@@ -11,7 +11,7 @@ const Hotspot = ({ icon, position, tip }) => {
     // const dotHov = {display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute', left: '50.5%', right: '50%', top: '68.2%', color: 'white', fontSize: '55px', cursor: 'pointer', textShadow: '0 0 20px white'}
     // const dot = {display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'absolute', left: '50.5%', right: '50%', top: '68.2%', color: 'white', fontSize: '55px', cursor: 'pointer', textShadow: '0 0 10px white'}
 
-    const tooltip = <div className="tooltip">
+    const tooltip = <div className="tooltipOneLine">
                         { tip }
                     </div>
 

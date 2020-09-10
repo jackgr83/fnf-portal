@@ -25,11 +25,11 @@ const Search = ({ goClicked, setLocation, setMicrositeUrl }) => {
         { value: 'Brazil', label: 'Brazil' },
         { value: 'Canada', label: 'Canada' },
         { value: 'Denmark', label: 'Denmark' },
-        { value: 'Ecuador', label: 'Ecuador' },
+        { value: 'Otavalo', label: 'Otavalo' },
         { value: 'Finland', label: 'Finland' },
         { value: 'Italy', label: 'Italy' },
         { value: 'Norway', label: 'Norway' },
-        { value: 'Spain', label: 'Spain' }
+        { value: 'CrunchyCakes', label: 'CrunchyCakes' }
     ]
 
     return (
