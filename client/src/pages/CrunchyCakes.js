@@ -22,7 +22,7 @@ const CrunchyCakes = () => {
     return (
         <div className='center'>
 
-            <Dotspot position={{left: '50.5%', right: '50%', top: '68.2%'}} tip={ <div>Click to order crunchy rice cakes!</div> } a={<A style={{color: 'white'}} href='/LaRoccaing'>&#9679;</A>} />
+            <Dotspot position={{left: '50.5%', right: '50%', top: '68.2%'}} tip={ <div>Click to order crunchy rice cakes!</div> } a={<A style={{color: 'white'}} href='/LaRocca'>&#9679;</A>} />
 
             <img 
                 height='50%' 

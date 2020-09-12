@@ -8,11 +8,13 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
+import { DialogContentText, Radio, RadioGroup, FormControl, FormControlLabel } from '@material-ui/core'
 
 const LaRocca = () => {
 
     const [hover, setHover] = useState(false)
     const [order, setOrder] = useState(false)
+    const [value, setValue] = useState('one')
 
     useEffect(() => { 
         document.body.style.backgroundImage = `url(${lr})`
@@ -27,6 +29,10 @@ const LaRocca = () => {
         setOrder(false)
     }
 
+    const handleChange = (event) => {
+        setValue(event.target.value)
+    } 
+
     const tooltip = <div className="orderModal">
                         <img src={zf} />
                         <div style={{color: 'black', height: '50px', width: '200px', position: 'absolute', left: '30%', top: '15%'}}>
@@ -36,7 +42,7 @@ const LaRocca = () => {
                             I am sure this wine tastes good.
                         </div>
                         <div style={{float: 'right', marginTop: '90px', marginRight: '20px'}}>
-                            <Button onClick={() => handleOrderClick()}>Click to Order</Button>
+                            <Button style={{fontSize: '12px'}} onClick={() => handleOrderClick()}>Click to Order</Button>
                         </div>
                     </div>
 
@@ -44,8 +50,8 @@ const LaRocca = () => {
         <div>
             <Tooltip title={tooltip} interactive>
                 <div
-                    className={ hover ? 'dotHov' : 'dot' }
-                    style={{position: 'absolute', left: '34.4%', top: '58%', cursor: 'pointer'}}
+                    className={ hover ? 'rDotHov' : 'rDot' }
+                    style={{position: 'absolute', left: '14%', top: '58%', cursor: 'pointer'}}
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                 >
@@ -56,15 +62,29 @@ const LaRocca = () => {
                 onClose={closeOrder}
                 aria-labelledby="simple-dialog-title"
                 open={order}
+                maxWidth='xs'
+                fullWidth='true'
             >
                 <DialogTitle>
                     2008 Zinfandel
-                    <IconButton aria-label="close" style={{ position: 'absolute', right: '3%', top: '2%' }}>
+                    <IconButton aria-label="close" style={{ position: 'absolute', right: '3%', top: '2%' }} onClick={closeOrder}>
                         <CloseIcon />
                     </IconButton>
                 </DialogTitle>
                 <DialogContent>
-                    <Button>
+                    <img style={{float: 'left', marginRight: '15px'}} src={zf} />
+                    <DialogContentText>
+                        <div style={{color: 'green', fontWeight: 'bold'}}>$30.00</div>
+                        <div>Subscribe and Save!</div>
+                        <FormControl component="fieldset">
+                            <RadioGroup value={value} onChange={handleChange}>
+                                <FormControlLabel value="one" control={<Radio />} label="One time purchase" />
+                                <FormControlLabel value="sub" control={<Radio />} label="Subscribe and save 20%!" />
+                            </RadioGroup>
+                        </FormControl>
+                        <div style={{color: 'green', fontSize: '12px'}}>See details</div>
+                    </DialogContentText>
+                    <Button style={{marginLeft: '100px'}}>
                         Add to Cart
                     </Button>
                 </DialogContent>

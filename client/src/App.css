@@ -188,6 +188,27 @@ input[type='text'] {
   text-shadow: 0 0 20px white;
 }
 
+.rDot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: red;
+  text-shadow: 0 0 10px red;
+  font-size: 55px;
+}
+
+.rDotHov {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: red;
+  font-size: 55px;
+  cursor: pointer;
+  text-shadow: 0 0 20px red;
+}
+
 .bDot {
   display: flex;
   align-items: center;
