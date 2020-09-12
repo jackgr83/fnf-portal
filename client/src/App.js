@@ -15,6 +15,7 @@ import Babel from './pages/Babel'
 import Ecuador from './pages/Ecuador'
 import CrunchyCakes from './pages/CrunchyCakes'
 import Otavalo from './pages/Otavalo'
+import LaRocca from './pages/LaRocca'
 
 const routes = {
   '/': () => <Opening />,
@@ -23,6 +24,7 @@ const routes = {
   '/Babel': () => <Babel />,
   '/Ecuador': () => <Ecuador />,
   '/CrunchyCakes': () => <CrunchyCakes />,
+  '/LaRocca': () => <LaRocca />,
   '/Otavalo': () => <Otavalo />,
   '/Section2': () => <Section2 />,
   '/Section3': () => <Section3 />,

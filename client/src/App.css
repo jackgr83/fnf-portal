@@ -261,6 +261,12 @@ input[type='text'] {
   border-color:  transparent transparent rgba(0,0,0,.5) transparent;
 }
 
+.orderModal {
+  width: 400px;
+  height: 156px;
+  background-color: white;
+}
+
 .shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;

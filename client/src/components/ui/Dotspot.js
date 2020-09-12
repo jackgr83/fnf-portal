@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Tooltip from '@material-ui/core/Tooltip'
-import earth from '../../img/earth.png'
 
 const Dotspot = ({ position, a, tip, black }) => {
 
