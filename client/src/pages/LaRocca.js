@@ -9,12 +9,14 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 import { DialogContentText, Radio, RadioGroup, FormControl, FormControlLabel } from '@material-ui/core'
+import axios from 'axios'
 
 const LaRocca = () => {
 
     const [hover, setHover] = useState(false)
     const [order, setOrder] = useState(false)
     const [value, setValue] = useState('one')
+    const [add, setAdd] = useState(true)
 
     useEffect(() => { 
         document.body.style.backgroundImage = `url(${lr})`
@@ -31,18 +33,39 @@ const LaRocca = () => {
 
     const handleChange = (event) => {
         setValue(event.target.value)
-    } 
+    }
+    
+    const addToCart = (event) => {
+        const callAxios = async (item) => {
+            await axios
+             .get("/api/items")
+             .then((response) => {
+                if (response.data.find(x => x.name == item)) {
+                    alert('item already added to cart')
+                } else {
+                    axios
+                    .post("/api/items", {
+                        name: item
+                    })
+                    closeOrder()
+                }
+             })
+        }
+
+        callAxios(event.target.value)
+    }
 
     const tooltip = <div className="orderModal">
                         <img src={zf} />
-                        <div style={{color: 'black', height: '50px', width: '200px', position: 'absolute', left: '30%', top: '15%'}}>
+                        <div></div>
+                        <div style={{color: 'black', height: '160px', width: '200px', marginTop: '-150px', marginLeft: '85px'}}>
+                            <b>2008 Zinfandel</b><br></br>
                             This will be a short paragraph describing the Zinfandel wine. 
                             The rest of this paragraph will just be dummy text to fill in the modal. 
                             The fair world organization was founded by Andy Cooksey in insert year here.
-                            I am sure this wine tastes good.
                         </div>
-                        <div style={{float: 'right', marginTop: '90px', marginRight: '20px'}}>
-                            <Button style={{fontSize: '12px'}} onClick={() => handleOrderClick()}>Click to Order</Button>
+                        <div style={{marginTop: '-70px', marginLeft: '150px'}}>
+                            <Button style={{fontSize: '12px', cursor: 'pointer'}} onClick={() => handleOrderClick()}>Click to Order</Button>
                         </div>
                     </div>
 
@@ -51,7 +74,7 @@ const LaRocca = () => {
             <Tooltip title={tooltip} interactive>
                 <div
                     className={ hover ? 'rDotHov' : 'rDot' }
-                    style={{position: 'absolute', left: '14%', top: '58%', cursor: 'pointer'}}
+                    style={{position: 'absolute', left: '14%', top: '58%', cursor: 'default' }}
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                 >
@@ -67,7 +90,7 @@ const LaRocca = () => {
             >
                 <DialogTitle>
                     2008 Zinfandel
-                    <IconButton aria-label="close" style={{ position: 'absolute', right: '3%', top: '2%' }} onClick={closeOrder}>
+                    <IconButton aria-label="close" style={{ position: 'absolute', right: '3%', top: '2%', cursor: 'default' }} onClick={closeOrder}>
                         <CloseIcon />
                     </IconButton>
                 </DialogTitle>
@@ -78,14 +101,17 @@ const LaRocca = () => {
                         <div>Subscribe and Save!</div>
                         <FormControl component="fieldset">
                             <RadioGroup value={value} onChange={handleChange}>
-                                <FormControlLabel value="one" control={<Radio />} label="One time purchase" />
-                                <FormControlLabel value="sub" control={<Radio />} label="Subscribe and save 20%!" />
+                                <FormControlLabel style={{cursor: 'default'}} value="one" control={<Radio style={{cursor: 'default'}} />} label="One time purchase" />
+                                <FormControlLabel style={{cursor: 'default'}} value="sub" control={<Radio style={{cursor: 'default'}} />} label="Subscribe and save 20%!" />
                             </RadioGroup>
                         </FormControl>
-                        <div style={{color: 'green', fontSize: '12px'}}>See details</div>
+                        <div style={{color: 'green', fontSize: '12px', cursor: 'pointer'}}>See details</div>
                     </DialogContentText>
-                    <Button style={{marginLeft: '100px'}}>
+                    <Button style={{marginLeft: '100px', cursor: 'pointer'}} value="Zinfandel 2008" onClick={addToCart}>
                         Add to Cart
+                    </Button>
+                    <Button style={{fontSize: '12px', marginLeft: '25px', cursor: 'pointer'}}>
+                        Return to Homepage
                     </Button>
                 </DialogContent>
             </Dialog> 
