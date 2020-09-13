@@ -16,6 +16,7 @@ import Ecuador from './pages/Ecuador'
 import CrunchyCakes from './pages/CrunchyCakes'
 import Otavalo from './pages/Otavalo'
 import LaRocca from './pages/LaRocca'
+import Cart from './pages/Cart'
 
 const routes = {
   '/': () => <Opening />,
@@ -26,6 +27,7 @@ const routes = {
   '/CrunchyCakes': () => <CrunchyCakes />,
   '/LaRocca': () => <LaRocca />,
   '/Otavalo': () => <Otavalo />,
+  '/Cart': () => <Cart />,
   '/Section2': () => <Section2 />,
   '/Section3': () => <Section3 />,
   '/Section4': () => <Section4 />,

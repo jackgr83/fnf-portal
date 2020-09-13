@@ -21,7 +21,10 @@ const Cart = () => {
                 console.log('error fetching data')
             }
         }
+        
         fetchItems()
+        document.body.style.backgroundColor = '#000'
+        return () => {document.body.style.backgroundColor = 'white'} 
     })
 
     return (
