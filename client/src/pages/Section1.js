@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import earth from '../img/earth.png'
 import ge from '../img/GuixExplanation.PNG'
 import rm from '../img/90day.PNG'
 import hf from '../img/founders.PNG'

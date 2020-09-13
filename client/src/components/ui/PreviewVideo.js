@@ -11,8 +11,12 @@ import CloseIcon from '@material-ui/icons/Close'
 import FeedbackForm from './FeedbackForm'
 import Dotspot from './Dotspot'
 import { A } from 'hookrouter'
+import ec from '../../img/Ecuador.mp4'
+import am from '../../img/Amsterdam.mp4'
+import op from '../../img/Opening.mp4'
+import jn from '../../img/jonathan.mp4'
 
-const PreviewVideo = ({ title, fForm, dotspot, ended }) => {
+const PreviewVideo = ({ title, fForm, dotspot, ended, src, setVid }) => {
 
     const [video, setVideo] = useState(true)
     const [form, setForm] = useState(false)
@@ -20,10 +24,12 @@ const PreviewVideo = ({ title, fForm, dotspot, ended }) => {
     const closeVideo = (e) => {
         e.preventDefault()
         setVideo(false)
+        setVid(false)
     }
 
     const closeDialogs = () => {
         setVideo(false)
+        setVid(false)
         setForm(false)
         if(ended){ended(true)}
     }
@@ -48,7 +54,7 @@ const PreviewVideo = ({ title, fForm, dotspot, ended }) => {
                 </DialogTitle>
                 <DialogContent>
                     <video id="video" width="400" controls autoPlay onPause={() => openForm()} onEnded={() => closeDialogs()}>
-                        <source src={vid} type="video/mp4"></source>
+                        <source src={src} type="video/mp4"></source>
                     </video>
                     { dotspot ? dotspot : '' }
                     {/* <Dotspot position={{left: '80%', top: '60%'}} a={<A style={{color: 'white'}} href='/Otavalo'>&#9679;</A>} />     */}
