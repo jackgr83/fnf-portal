@@ -24,12 +24,16 @@ const PreviewVideo = ({ title, fForm, dotspot, ended, src, setVid }) => {
     const closeVideo = (e) => {
         e.preventDefault()
         setVideo(false)
-        setVid(false)
+        if (setVid) {
+            setVid(false)
+        }
     }
 
     const closeDialogs = () => {
         setVideo(false)
-        setVid(false)
+        if (setVid) {
+            setVid(false)
+        }
         setForm(false)
         if(ended){ended(true)}
     }
@@ -41,7 +45,7 @@ const PreviewVideo = ({ title, fForm, dotspot, ended, src, setVid }) => {
 
     return (
         <div>
-            <Dialog
+            <Dialog fullScreen
                 onClose={closeVideo}
                 aria-labelledby="simple-dialog-title"
                 open={video}
@@ -53,7 +57,7 @@ const PreviewVideo = ({ title, fForm, dotspot, ended, src, setVid }) => {
                     </IconButton>
                 </DialogTitle>
                 <DialogContent>
-                    <video id="video" width="400" controls autoPlay onPause={() => openForm()} onEnded={() => closeDialogs()}>
+                    <video id="video" width="100%" height="100%" controls autoPlay onPause={() => openForm()} onEnded={() => closeDialogs()}>
                         <source src={src} type="video/mp4"></source>
                     </video>
                     { dotspot ? dotspot : '' }

@@ -6,10 +6,10 @@ import pp from '../img/proposition.PNG'
 import ecomama from '../img/ecomama.PNG'
 import PreviewVideo from '../components/ui/PreviewVideo'
 import Hotspot from '../components/ui/Hotspot'
-import ec from '../img/Ecuador.mp4'
-import am from '../img/Amsterdam.mp4'
-import op from '../img/Opening.mp4'
-import jn from '../img/jonathan.mp4'
+import ec from '../img/GuixEx.mov'
+import am from '../img/4thHotspot.mov'
+import op from '../img/virtual.mp4'
+import jn from '../img/Oyakachi.mp4'
 
 const Section2 = () => {
 
@@ -45,40 +45,49 @@ const Section2 = () => {
         <div>
             <div className='flexContainer'>
                 <div className='flexItem'>
-                    <video id="ecVideo" width="400" style={{cursor: 'pointer'}}
-                        onMouseEnter={() => playPreview("ecVideo")}
-                        onMouseLeave={() => stopPreview("ecVideo")}
-                        onClick={() => playVideo(ec, "Ecuador")}
-                    >
-                        <source src={ec} type="video/mp4"></source>
-                    </video>
+                    <Hotspot icon={
+                        <video className="shadow" id="ecVideo" width="400" style={{cursor: 'pointer'}}
+                            onMouseEnter={() => playPreview("ecVideo")}
+                            onMouseLeave={() => stopPreview("ecVideo")}
+                            onClick={() => playVideo(ec, "Hotspot Explanation")}
+                        >
+                            <source src={ec} type="video/mp4"></source>
+                        </video>
+                    } tip={ <div>Click to watch</div> } ></Hotspot>
+                    
                 </div>
                 <div className='flexItem'>
-                    <video id="amVideo" width="400" style={{cursor: 'pointer'}}
-                        onMouseEnter={() => playPreview("amVideo")}
-                        onMouseLeave={() => stopPreview("amVideo")}
-                        onClick={() => playVideo(am, "Amsterdam")}
-                    >
-                        <source src={am} type="video/mp4"></source>
-                    </video>
+                    <Hotspot icon={
+                        <video className="shadow" id="amVideo" width="400" style={{cursor: 'pointer'}}
+                            onMouseEnter={() => playPreview("amVideo")}
+                            onMouseLeave={() => stopPreview("amVideo")}
+                            onClick={() => playVideo(am, "Virtual World")}
+                        >
+                            <source src={am} type="video/mp4"></source>
+                        </video>
+                    } tip={ <div>Click to watch</div> } ></Hotspot>
                 </div>
                 <div className='flexItem'>
-                    <video id="opVideo" width="400" style={{cursor: 'pointer'}}
-                        onMouseEnter={() => playPreview("opVideo")}
-                        onMouseLeave={() => stopPreview("opVideo")}
-                        onClick={() => playVideo(op, "Opening")}
-                    >
-                        <source src={op} type="video/mp4"></source>
-                    </video>
+                    <Hotspot icon={
+                        <video className="shadow" id="opVideo" width="400" style={{cursor: 'pointer'}}
+                            onMouseEnter={() => playPreview("opVideo")}
+                            onMouseLeave={() => stopPreview("opVideo")}
+                            onClick={() => playVideo(op, "Virtual Communities")}
+                        >
+                            <source src={op} type="video/mp4"></source>
+                        </video>
+                    } tip={ <div>Click to watch</div> } ></Hotspot>
                 </div>
                 <div className='flexItem'>
-                    <video id="jnVideo" width="400" style={{cursor: 'pointer'}}
-                        onMouseEnter={() => playPreview("jnVideo")}
-                        onMouseLeave={() => stopPreview("jnVideo")}
-                        onClick={() => playVideo(jn, "Jonathan")}
-                    >
-                        <source src={jn} type="video/mp4"></source>
-                    </video>
+                    <Hotspot icon={
+                        <video className="shadow" id="jnVideo" width="400" style={{cursor: 'pointer'}}
+                            onMouseEnter={() => playPreview("jnVideo")}
+                            onMouseLeave={() => stopPreview("jnVideo")}
+                            onClick={() => playVideo(jn, "Global Zoom")}
+                        >
+                            <source src={jn} type="video/mp4"></source>
+                        </video>
+                    } tip={ <div>Click to watch</div> } ></Hotspot>
                 </div>
             </div>
             <div style={{ position: 'absolute', left: '50%', right: '50%', top: '50%', textAlign: 'center', margin: '-50px 0px 0px -75px' }}>

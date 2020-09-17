@@ -6,6 +6,7 @@ import pp from '../img/proposition.PNG'
 import ecomama from '../img/ecomama.PNG'
 import PreviewVideo from '../components/ui/PreviewVideo'
 import Hotspot from '../components/ui/Hotspot'
+import prev1 from '../img/prev1.mp4'
 
 const Section1 = () => {
 
@@ -20,7 +21,7 @@ const Section1 = () => {
             <div style={{ position: 'absolute', left: '50%', right: '50%', top: '50%', textAlign: 'center', margin: '-50px 0px 0px -75px' }}>
                 <img src={ecomama} />
             </div>
-            <PreviewVideo fForm={true} title={<div>Our Proposition</div>} />
+            <PreviewVideo fForm={true} title={<div>Our Proposition</div>} src={prev1} />
         </div>
     )
 }
