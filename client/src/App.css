@@ -288,6 +288,19 @@ input[type='text'] {
   background-color: white;
 }
 
+.SkipButton {
+  position: absolute;
+  right: 10%;
+  margin-top: -60px;
+  background-color: transparent;
+  color: white;
+  border-radius: 25px;
+  padding: 8px 17px;
+  border: 2px solid white;
+  cursor: pointer;
+  outline: none;
+}
+
 .shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;

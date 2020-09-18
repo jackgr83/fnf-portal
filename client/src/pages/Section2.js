@@ -10,6 +10,7 @@ import ec from '../img/GuixEx.mov'
 import am from '../img/4thHotspot.mov'
 import op from '../img/virtual.mp4'
 import jn from '../img/Oyakachi.mp4'
+import {navigate} from 'hookrouter'
 
 const Section2 = () => {
 
@@ -53,7 +54,7 @@ const Section2 = () => {
                         >
                             <source src={ec} type="video/mp4"></source>
                         </video>
-                    } tip={ <div>Click to watch</div> } ></Hotspot>
+                    } tip={ <div>Hotspot Explanation</div> } ></Hotspot>
                     
                 </div>
                 <div className='flexItem'>
@@ -61,11 +62,11 @@ const Section2 = () => {
                         <video className="shadow" id="amVideo" width="400" style={{cursor: 'pointer'}}
                             onMouseEnter={() => playPreview("amVideo")}
                             onMouseLeave={() => stopPreview("amVideo")}
-                            onClick={() => playVideo(am, "Virtual World")}
+                            onClick={() => playVideo(am, "Virtual World demo")}
                         >
                             <source src={am} type="video/mp4"></source>
                         </video>
-                    } tip={ <div>Click to watch</div> } ></Hotspot>
+                    } tip={ <div>Virtual World demo</div> } ></Hotspot>
                 </div>
                 <div className='flexItem'>
                     <Hotspot icon={
@@ -76,24 +77,30 @@ const Section2 = () => {
                         >
                             <source src={op} type="video/mp4"></source>
                         </video>
-                    } tip={ <div>Click to watch</div> } ></Hotspot>
+                    } tip={ <div>Virtual communities</div> } ></Hotspot>
                 </div>
                 <div className='flexItem'>
                     <Hotspot icon={
                         <video className="shadow" id="jnVideo" width="400" style={{cursor: 'pointer'}}
                             onMouseEnter={() => playPreview("jnVideo")}
                             onMouseLeave={() => stopPreview("jnVideo")}
-                            onClick={() => playVideo(jn, "Global Zoom")}
+                            onClick={() => playVideo(jn, "Oyakachi zoom")}
                         >
                             <source src={jn} type="video/mp4"></source>
                         </video>
-                    } tip={ <div>Click to watch</div> } ></Hotspot>
+                    } tip={ <div>Oyakachi zoom</div> } ></Hotspot>
                 </div>
             </div>
             <div style={{ position: 'absolute', left: '50%', right: '50%', top: '50%', textAlign: 'center', margin: '-50px 0px 0px -75px' }}>
                 <img src={ecomama} />
             </div>
             { videoClicked ? <PreviewVideo fForm={true} title={<div>{videoTitle}</div>} src={videoSrc} setVid={(bool) => setVideoClicked(bool)} /> : '' }
+            <div style={{color: 'black'}} onClick={() => navigate('/Section3', false)}>
+                <Hotspot position={{position: 'absolute', left: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 3</div>} icon={<span style={{fontSize: '40px'}}>&#8594;</span>}></Hotspot>
+            </div>
+            <div style={{color: 'black'}} onClick={() => navigate('/Section1', false)}>
+                <Hotspot position={{position: 'absolute', right: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 1</div>} icon={<span style={{fontSize: '40px'}}>&#8592;</span>}></Hotspot>
+            </div>
         </div>
     )
 }

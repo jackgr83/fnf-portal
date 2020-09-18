@@ -10,6 +10,7 @@ import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 import { DialogContentText, Radio, RadioGroup, FormControl, FormControlLabel } from '@material-ui/core'
 import axios from 'axios'
+import { navigate } from 'hookrouter'
 
 const LaRocca = () => {
 
@@ -110,7 +111,7 @@ const LaRocca = () => {
                     <Button style={{marginLeft: '100px', cursor: 'pointer'}} value="Zinfandel 2008" onClick={addToCart}>
                         Add to Cart
                     </Button>
-                    <Button style={{fontSize: '12px', marginLeft: '25px', cursor: 'pointer'}}>
+                    <Button style={{fontSize: '12px', marginLeft: '25px', cursor: 'pointer'}} onClick={() => navigate('/', false)}>
                         Return to Homepage
                     </Button>
                 </DialogContent>

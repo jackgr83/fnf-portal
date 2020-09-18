@@ -55,7 +55,9 @@ const Opening = () => {
                      tip={<div>2000-2005<br></br>ReDreaming<br></br>Seminars</div>} />         
             <Dotspot position={{left: '42%', top: '40%'}} 
                      a={<A style={{color: 'white'}} href='/Babel'>&#9679;</A>}
-                     tip={<div>Midnight 2000<br></br>Tower of Babel</div>} />         
+                     tip={<div>Midnight 2000<br></br>Tower of Babel</div>} />      
+
+            <button className="SkipButton" onClick={() => navigate('/Section1', false)}>SKIP</button>   
         </div>
     )
 }

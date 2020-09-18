@@ -20,16 +20,9 @@ const Search = ({ goClicked, setLocation, setMicrositeUrl }) => {
     ]
 
     const pOptions = [
-        { value: 'Amsterdam', label: 'Amsterdam' },
-        { value: 'Australia', label: 'Australia' },
-        { value: 'Brazil', label: 'Brazil' },
-        { value: 'Canada', label: 'Canada' },
-        { value: 'Denmark', label: 'Denmark' },
-        { value: 'Otavalo', label: 'Otavalo' },
-        { value: 'Finland', label: 'Finland' },
-        { value: 'Italy', label: 'Italy' },
-        { value: 'Norway', label: 'Norway' },
-        { value: 'CrunchyCakes', label: 'CrunchyCakes' }
+        { value: 'LaRocca', label: 'La Rocca Vineyards' },
+        { value: 'Otavalo', label: 'Otavalo, Ecuador' },
+        { value: 'CrunchyCakes', label: 'Crunchy Cakes' }
     ]
 
     return (

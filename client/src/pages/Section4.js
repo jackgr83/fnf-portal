@@ -6,54 +6,101 @@ import pp from '../img/proposition.PNG'
 import ecomama from '../img/ecomama.PNG'
 import PreviewVideo from '../components/ui/PreviewVideo'
 import Hotspot from '../components/ui/Hotspot'
+// import ec from '../img/infographic.mp4'
+import am from '../img/merged.mp4'
+import op from '../img/ecomama.mp4'
 import jn from '../img/jonathan.mp4'
-import Header from '../components/ui/Header'
-import bg from '../img/bg.jpg'
-import Dotspot from '../components/ui/Dotspot'
-import { A } from 'hookrouter'
+import { navigate } from 'hookrouter'
 
 const Section4 = () => {
 
-    useEffect(() => { 
-        document.body.style.backgroundImage = `url(${bg})`
-        return () => {document.body.style.backgroundImage = ''} 
-    })
+    const [videoSrc, setVideoSrc] = useState({})
+    const [videoClicked, setVideoClicked] = useState(false)
+    const [videoTitle, setVideoTitle] = useState('')
+
+    const playPreview = (id) => {
+        var video = document.getElementById(id)
+        video.currentTime=0
+        video.play()
+        setInterval(() => {
+            if (video.currentTime>1){
+                video.pause()
+                video.currentTime=0
+            }
+        },1000)
+    }
+
+    const stopPreview = (id) => {
+        var video = document.getElementById(id)
+        video.pause()
+        video.currentTime=0
+    }
+
+    const playVideo = (id, title) => {
+        setVideoSrc(id)
+        setVideoTitle(title)
+        setVideoClicked(true)
+    }
 
     return (
         <div>
-            <Header />
-            <div className="center">
-                <video id="vid" width="50%" height="50%" autoPlay controls>
-                    <source src={jn} type="video/mp4"></source>
-                </video>
-            </div>
-
-            <Dotspot position={{left: '30%', top: '50%'}} 
-                     a={<A style={{color: 'white'}} href='/SantaMonica'>&#9679;</A>}
-                     tip={<div>SCX - Constructing 1st Value Chains</div>}
-                     black={true} />         
-            <Dotspot position={{left: '70%', top: '50%'}} 
-                     a={<A style={{color: 'white'}} href='/Otavalo'>&#9679;</A>}
-                     tip={<div>EcoMama Brand Certification</div>} 
-                     black={true} />         
-            <Dotspot position={{left: '42%', top: '40%'}} 
-                     a={<A style={{color: 'white'}} href='/Babel'>&#9679;</A>}
-                     tip={<div>Ecomama Product Group - Products and Services</div>}
-                     black={true} />  
-            <Dotspot position={{left: '60%', top: '30%'}} 
-                     a={<A style={{color: 'white'}} href='/Babel'>&#9679;</A>}
-                     tip={<div>Organizing Direct Distribution - Proof of Concepts</div>}
-                     black={true} />  
-            {/* <div className='flexContainer'>
-                <div className='flexItem'><Hotspot icon={<img className="shadow" src={rm} />} tip={ <div>Our 90 Day Roadmap</div> } ></Hotspot></div>
-                <div className='flexItem'><Hotspot icon={<img className="shadow" src={ge} />} tip={ <div>Guix Explanation</div> }></Hotspot></div>
-                <div className='flexItem'><Hotspot icon={<img className="shadow" src={hf} />} tip={ <div>History and Founders</div> }></Hotspot></div>
-                <div className='flexItem'><Hotspot icon={<img className="shadow" src={pp} />} tip={ <div>Our Proposition</div> }></Hotspot></div>
+            <div className='flexContainer'>
+                <div className='flexItem'>
+                    {/* <Hotspot icon={
+                        <video className="shadow" id="ecVideo" width="400" style={{cursor: 'pointer'}}
+                            onMouseEnter={() => playPreview("ecVideo")}
+                            onMouseLeave={() => stopPreview("ecVideo")}
+                            onClick={() => playVideo(ec, "Hotspot Explanation")}
+                        >
+                            <source src={ec} type="video/mp4"></source>
+                        </video>
+                    } tip={ <div>Hotspot Explanation</div> } ></Hotspot> */}
+                    
+                </div>
+                <div className='flexItem'>
+                    <Hotspot icon={
+                        <video className="shadow" id="amVideo" width="400" style={{cursor: 'pointer'}}
+                            onMouseEnter={() => playPreview("amVideo")}
+                            onMouseLeave={() => stopPreview("amVideo")}
+                            onClick={() => playVideo(am, "Virtual World demo")}
+                        >
+                            <source src={am} type="video/mp4"></source>
+                        </video>
+                    } tip={ <div>Virtual World demo</div> } ></Hotspot>
+                </div>
+                <div className='flexItem'>
+                    <Hotspot icon={
+                        <video className="shadow" id="opVideo" width="400" style={{cursor: 'pointer'}}
+                            onMouseEnter={() => playPreview("opVideo")}
+                            onMouseLeave={() => stopPreview("opVideo")}
+                            onClick={() => playVideo(op, "Virtual Communities")}
+                        >
+                            <source src={op} type="video/mp4"></source>
+                        </video>
+                    } tip={ <div>Virtual communities</div> } ></Hotspot>
+                </div>
+                <div className='flexItem'>
+                    <Hotspot icon={
+                        <video className="shadow" id="jnVideo" width="400" style={{cursor: 'pointer'}}
+                            onMouseEnter={() => playPreview("jnVideo")}
+                            onMouseLeave={() => stopPreview("jnVideo")}
+                            onClick={() => playVideo(jn, "Oyakachi zoom")}
+                        >
+                            <source src={jn} type="video/mp4"></source>
+                        </video>
+                    } tip={ <div>Oyakachi zoom</div> } ></Hotspot>
+                </div>
             </div>
             <div style={{ position: 'absolute', left: '50%', right: '50%', top: '50%', textAlign: 'center', margin: '-50px 0px 0px -75px' }}>
                 <img src={ecomama} />
             </div>
-            <PreviewVideo fForm={true} title={<div>Our Proposition</div>} /> */}
+            { videoClicked ? <PreviewVideo fForm={true} title={<div>{videoTitle}</div>} src={videoSrc} setVid={(bool) => setVideoClicked(bool)} /> : '' }
+            <div style={{color: 'black'}} onClick={() => navigate('/Section2', false)}>
+                <Hotspot position={{position: 'absolute', left: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 2</div>} icon={<span style={{fontSize: '40px'}}>&#8594;</span>}></Hotspot>
+            </div>
+            <div style={{color: 'black'}} onClick={() => navigate('/', false)}>
+                <Hotspot position={{position: 'absolute', right: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Opening</div>} icon={<span style={{fontSize: '40px'}}>&#8592;</span>}></Hotspot>
+            </div>
         </div>
     )
 }
