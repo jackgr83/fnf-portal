@@ -31,10 +31,10 @@ const Section3 = () => {
             {/* Navigate to Microsite Url below */}
             {/* { videoEnded && goClick ? window.open(micrositeUrl) : goClick ? zoom : globe } */}
             <div style={{color: 'white'}} onClick={() => navigate('/Section4', false)}>
-                <Hotspot position={{position: 'absolute', left: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 4</div>} icon={<span style={{fontSize: '40px'}}>&#8594;</span>}></Hotspot>
+                <Hotspot position={{position: 'absolute', left: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 4</div>} icon={<span style={{fontSize: '40px'}}>&#8680;</span>}></Hotspot>
             </div>
             <div style={{color: 'white'}} onClick={() => navigate('/Section2', false)}>
-                <Hotspot position={{position: 'absolute', right: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 2</div>} icon={<span style={{fontSize: '40px'}}>&#8592;</span>}></Hotspot>
+                <Hotspot position={{position: 'absolute', right: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 2</div>} icon={<span style={{fontSize: '40px'}}>&#8678;</span>}></Hotspot>
             </div>
         </div>
         

@@ -96,10 +96,10 @@ const Section2 = () => {
             </div>
             { videoClicked ? <PreviewVideo fForm={true} title={<div>{videoTitle}</div>} src={videoSrc} setVid={(bool) => setVideoClicked(bool)} /> : '' }
             <div style={{color: 'black'}} onClick={() => navigate('/Section3', false)}>
-                <Hotspot position={{position: 'absolute', left: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 3</div>} icon={<span style={{fontSize: '40px'}}>&#8594;</span>}></Hotspot>
+                <Hotspot position={{position: 'absolute', left: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 3</div>} icon={<span style={{fontSize: '40px'}}>&#8680;</span>}></Hotspot>
             </div>
             <div style={{color: 'black'}} onClick={() => navigate('/Section1', false)}>
-                <Hotspot position={{position: 'absolute', right: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 1</div>} icon={<span style={{fontSize: '40px'}}>&#8592;</span>}></Hotspot>
+                <Hotspot position={{position: 'absolute', right: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 1</div>} icon={<span style={{fontSize: '40px'}}>&#8678;</span>}></Hotspot>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ import pp from '../img/proposition.PNG'
 import ecomama from '../img/ecomama.PNG'
 import PreviewVideo from '../components/ui/PreviewVideo'
 import Hotspot from '../components/ui/Hotspot'
-// import ec from '../img/infographic.mp4'
+import ec from '../img/Portals.mp4'
 import am from '../img/merged.mp4'
 import op from '../img/ecomama.mp4'
 import jn from '../img/jonathan.mp4'
@@ -46,7 +46,7 @@ const Section4 = () => {
         <div>
             <div className='flexContainer'>
                 <div className='flexItem'>
-                    {/* <Hotspot icon={
+                    <Hotspot icon={
                         <video className="shadow" id="ecVideo" width="400" style={{cursor: 'pointer'}}
                             onMouseEnter={() => playPreview("ecVideo")}
                             onMouseLeave={() => stopPreview("ecVideo")}
@@ -54,7 +54,7 @@ const Section4 = () => {
                         >
                             <source src={ec} type="video/mp4"></source>
                         </video>
-                    } tip={ <div>Hotspot Explanation</div> } ></Hotspot> */}
+                    } tip={ <div>Hotspot Explanation</div> } ></Hotspot>
                     
                 </div>
                 <div className='flexItem'>
@@ -95,11 +95,11 @@ const Section4 = () => {
                 <img src={ecomama} />
             </div>
             { videoClicked ? <PreviewVideo fForm={true} title={<div>{videoTitle}</div>} src={videoSrc} setVid={(bool) => setVideoClicked(bool)} /> : '' }
-            <div style={{color: 'black'}} onClick={() => navigate('/Section2', false)}>
-                <Hotspot position={{position: 'absolute', left: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 2</div>} icon={<span style={{fontSize: '40px'}}>&#8594;</span>}></Hotspot>
+            <div style={{color: 'black'}} onClick={() => navigate('/Section5', false)}>
+                <Hotspot position={{position: 'absolute', left: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 5</div>} icon={<span style={{fontSize: '40px'}}>&#8680;</span>}></Hotspot>
             </div>
-            <div style={{color: 'black'}} onClick={() => navigate('/', false)}>
-                <Hotspot position={{position: 'absolute', right: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Opening</div>} icon={<span style={{fontSize: '40px'}}>&#8592;</span>}></Hotspot>
+            <div style={{color: 'black'}} onClick={() => navigate('/Section3', false)}>
+                <Hotspot position={{position: 'absolute', right: '90%', top: '85%', cursor: 'pointer'}}tip={<div>Section 3</div>} icon={<span style={{fontSize: '40px'}}>&#8678;</span>}></Hotspot>
             </div>
         </div>
     )
