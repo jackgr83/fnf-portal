@@ -307,6 +307,13 @@ input[type='text'] {
   border-radius: 25px;
 }
 
+.shadowV {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  border-radius: 25px;
+  display: none;
+}
+
 .MuiTooltip-tooltip {
   background-color: rgba(0, 0, 255, 0) !important;
 }

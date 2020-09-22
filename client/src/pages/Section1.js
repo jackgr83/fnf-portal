@@ -11,26 +11,47 @@ import am from '../img/you.mov'
 import op from '../img/guix.mp4'
 import jn from '../img/intro.mov'
 import { navigate } from 'hookrouter'
+import s1 from '../img/intro_thumbnail.jpg'
+import s2 from '../img/founders_thumbnail.jpg'
+import s3 from '../img/global-economy_thumbnail.jpg'
 
 const Section1 = () => {
 
     const [videoSrc, setVideoSrc] = useState({})
     const [videoClicked, setVideoClicked] = useState(false)
     const [videoTitle, setVideoTitle] = useState('')
+    const [thumbnail1, setThumbnail1] = useState(true)
+    const [thumbnail2, setThumbnail2] = useState(true)
+    const [thumbnail3, setThumbnail3] = useState(true)
+    const [thumbnail4, setThumbnail4] = useState(true)
 
     const playPreview = (id) => {
+        if(id == 'ecVideo'){setThumbnail1(false)} else if
+        (id == 'amVideo'){setThumbnail2(false)} else if 
+        (id == 'opVideo'){setThumbnail3(false)} else if
+        (id == 'jnVideo'){setThumbnail4(false)}
+        
         var video = document.getElementById(id)
         video.currentTime=0
         video.play()
         setInterval(() => {
             if (video.currentTime>1){
                 video.pause()
+                if(id == 'ecVideo'){setThumbnail1(true)} else if
+                (id == 'amVideo'){setThumbnail2(true); } else if 
+                (id == 'opVideo'){setThumbnail3(true)} else if
+                (id == 'jnVideo'){setThumbnail4(true)}
                 video.currentTime=0
             }
         },1000)
     }
 
     const stopPreview = (id) => {
+        if(id == 'ecVideo'){setThumbnail1(true)} else if
+        (id == 'amVideo'){setThumbnail2(true)} else if 
+        (id == 'opVideo'){setThumbnail3(true)} else if
+        (id == 'jnVideo'){setThumbnail4(true)}
+
         var video = document.getElementById(id)
         video.pause()
         video.currentTime=0
@@ -42,24 +63,55 @@ const Section1 = () => {
         setVideoClicked(true)
     }
 
+    useEffect(() => {
+        if (!thumbnail1){
+            document.getElementById('ecVideo').style.display = 'block'
+        } else if (thumbnail1) {
+            document.getElementById('ecVideo').style.display = 'none'
+        }
+        if (!thumbnail2){
+            document.getElementById('amVideo').style.display = 'block'
+        } else if (thumbnail2) {
+            document.getElementById('amVideo').style.display = 'none'
+        }
+        if (!thumbnail3){
+            document.getElementById('opVideo').style.display = 'block'
+        } else if (thumbnail3) {
+            document.getElementById('opVideo').style.display = 'none'
+        }
+        if (!thumbnail4){
+            document.getElementById('jnVideo').style.display = 'block'
+        } else if (thumbnail4) {
+            document.getElementById('jnVideo').style.display = 'none'
+        }
+    })
+
     return (
         <div>
             <div className='flexContainer'>
                 <div className='flexItem'>
+                    { thumbnail1 && <img className="shadow" width="400" src={s1}
+                                       onMouseEnter={() => playPreview("ecVideo")}
+                                    //    onMouseLeave={() => setPrev1Paused(false)}
+                                    ></img> } 
                     <Hotspot icon={
-                        <video className="shadow" id="ecVideo" width="400" style={{cursor: 'pointer'}}
-                            onMouseEnter={() => playPreview("ecVideo")}
+                        <video className="shadowV" id="ecVideo" width="400" style={{cursor: 'pointer'}}
+                            // onMouseEnter={() => playPreview("ecVideo")}
                             onMouseLeave={() => stopPreview("ecVideo")}
                             onClick={() => playVideo(ec, "Hotspot Explanation")}
                         >
                             <source src={ec} type="video/mp4"></source>
                         </video>
-                    } tip={ <div>Hotspot Explanation</div> } ></Hotspot>
+                    } tip={ <div>Hotspot Explanation</div> } ></Hotspot> 
                     
                 </div>
                 <div className='flexItem'>
+                { thumbnail2 && <img className="shadow" width="400" src={s2}
+                                       onMouseEnter={() => playPreview("amVideo")}
+                                    //    onMouseLeave={() => stopPreview("ecVideo")}
+                                    ></img> } 
                     <Hotspot icon={
-                        <video className="shadow" id="amVideo" width="400" style={{cursor: 'pointer'}}
+                        <video className="shadowV" id="amVideo" width="400" style={{cursor: 'pointer'}}
                             onMouseEnter={() => playPreview("amVideo")}
                             onMouseLeave={() => stopPreview("amVideo")}
                             onClick={() => playVideo(am, "Virtual World demo")}
@@ -69,8 +121,12 @@ const Section1 = () => {
                     } tip={ <div>Virtual World demo</div> } ></Hotspot>
                 </div>
                 <div className='flexItem'>
+                { thumbnail3 && <img className="shadow" width="400" src={s3}
+                                       onMouseEnter={() => playPreview("opVideo")}
+                                    //    onMouseLeave={() => stopPreview("ecVideo")}
+                                    ></img> } 
                     <Hotspot icon={
-                        <video className="shadow" id="opVideo" width="400" style={{cursor: 'pointer'}}
+                        <video className="shadowV" id="opVideo" width="400" style={{cursor: 'pointer'}}
                             onMouseEnter={() => playPreview("opVideo")}
                             onMouseLeave={() => stopPreview("opVideo")}
                             onClick={() => playVideo(op, "Virtual Communities")}
