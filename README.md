@@ -1,11 +1,12 @@
 ﻿# fnf-portal
 
-Instructions:
+##### Instructions
 
 1. After locally cloning this repository, run npm install in the root directory and in the client directory.
 2. Extract the contents of img.zip (located in Dropbox under Jack's Development) to a new folder called img within ./client/src.
 3. Run 'npm run dev' command to start the application on your local server and connect to the MongoDB database.
 
+##### Deployment
 
 This application can be deployed in two ways:
 
