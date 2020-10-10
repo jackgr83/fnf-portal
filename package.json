@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Demo portal for Fair World",
   "main": "server.js",
+  "engines": {
+    "node": "12.18.0"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
